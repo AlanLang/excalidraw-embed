@@ -1,0 +1,46 @@
+{
+  "name": "excalidraw-embed",
+  "version": "0.18.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "unpkg": "./dist/excalidraw-embed.umd.js",
+  "jsdelivr": "./dist/excalidraw-embed.umd.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/excalidraw-embed.umd.js"
+    },
+    "./umd": "./dist/excalidraw-embed.umd.js",
+    "./style.css": "./dist/excalidraw-embed.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "dev": "bun --hot src/server.ts",
+    "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
+    "build:lib": "bun run build:esm && bun run build:umd && bun run build:dts",
+    "build:esm": "bun scripts/build-esm.ts",
+    "build:umd": "bun scripts/build-umd.ts",
+    "build:dts": "tsc --project tsconfig.build.json",
+    "start": "NODE_ENV=production bun src/server.ts",
+    "prepublishOnly": "bun run build:lib"
+  },
+  "devDependencies": {
+    "@excalidraw/excalidraw": "^0.18.0",
+    "@types/bun": "latest",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "d3-sankey": "^0.12.3",
+    "esbuild": "^0.27.0",
+    "react": "^19",
+    "react-dom": "^19",
+    "typescript": "^5.7.2"
+  }
+}
