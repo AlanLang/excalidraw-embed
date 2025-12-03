@@ -5,10 +5,7 @@ import { ExcalidrawImperativeAPI, ExcalidrawProps } from "@excalidraw/excalidraw
 
 export function renderExcalidraw(el: HTMLElement, props: ExcalidrawProps) {
   const root = createRoot(el);
-  return new Promise<ExcalidrawImperativeAPI>((resolve) => {
-    root.render(<Excalidraw {...props} excalidrawAPI={(api) => {
-      resolve(api);
-    }} />);
-  });
+  root.render(<Excalidraw {...props}  />);
+  return root;
 }
 export { serializeAsJSON } from "@excalidraw/excalidraw";

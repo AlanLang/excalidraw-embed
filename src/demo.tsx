@@ -8,9 +8,5 @@ if(el) {
         gridModeEnabled: true,
       },
     }
-  }).then((api) => {
-    api.onChange((elements, appState, files) => {
-      console.log(elements, appState, files);
-    });
   });
 }
