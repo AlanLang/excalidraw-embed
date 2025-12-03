@@ -1,7 +1,16 @@
 {
   "name": "excalidraw-embed",
-  "version": "0.18.0",
+  "version": "0.18.1",
+  "description": "Embed Excalidraw whiteboard into any web page with a single function call",
   "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "excalidraw",
+    "whiteboard",
+    "drawing",
+    "embed",
+    "canvas"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "unpkg": "./dist/excalidraw-embed.umd.js",

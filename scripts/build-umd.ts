@@ -1,9 +1,10 @@
 import * as esbuild from "esbuild";
-import { readFileSync, writeFileSync, mkdirSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, cpSync } from "fs";
 import { dirname, join } from "path";
 
 // Ensure dist directory exists
 mkdirSync("dist", { recursive: true });
+mkdirSync("dist/fonts", { recursive: true });
 
 // Build UMD bundle
 await esbuild.build({
@@ -35,6 +36,11 @@ const cssPath = join(excalidrawPkg, "dist/prod/index.css");
 const css = readFileSync(cssPath, "utf-8");
 writeFileSync("dist/excalidraw-embed.css", css);
 
+// Copy fonts from excalidraw package
+const fontsPath = join(excalidrawPkg, "dist/prod/fonts");
+cpSync(fontsPath, "dist/fonts", { recursive: true });
+
 console.log("✅ UMD bundle built: dist/excalidraw-embed.umd.js");
 console.log("✅ CSS extracted: dist/excalidraw-embed.css");
+console.log("✅ Fonts copied: dist/fonts/");
 
