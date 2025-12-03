@@ -11,3 +11,4 @@ export function renderExcalidraw(el: HTMLElement, props: ExcalidrawProps) {
     }} />);
   });
 }
+export { serializeAsJSON } from "@excalidraw/excalidraw";
