@@ -1,6 +1,6 @@
 {
   "name": "excalidraw-embed",
-  "version": "0.18.1",
+  "version": "0.18.2",
   "description": "Embed Excalidraw whiteboard into any web page with a single function call",
   "type": "module",
   "license": "MIT",

@@ -41,7 +41,7 @@ npm install excalidraw-embed
   <script>
     ExcalidrawEmbed.renderExcalidraw(
       document.getElementById('excalidraw'),
-      { elements: [], appState: { viewBackgroundColor: '#ffffff' } }
+      {initialData: { elements: [], appState: { viewBackgroundColor: '#ffffff' } }}
     ).then(api => {
       console.log('Excalidraw loaded!', api);
     });
@@ -58,7 +58,7 @@ import 'excalidraw-embed/style.css';
 
 const api = await renderExcalidraw(
   document.getElementById('excalidraw'),
-  { elements: [], appState: { viewBackgroundColor: '#ffffff' } }
+  {initialData: { elements: [], appState: { viewBackgroundColor: '#ffffff' } }}
 );
 ```
 
